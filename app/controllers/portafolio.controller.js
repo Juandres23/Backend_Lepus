@@ -11,7 +11,6 @@ export const createPortafolio = async (req, res) => {
         const email = req.body.email;
         const imagen_url = req.body.imagen_url;
         const categoria_proyecto = req.body.categoria_proyecto;
-        const fecha_registro = req.body.fecha_registro;
         const fecha_creacion_proyecto = req.body.fecha_creacion_proyecto;
         const fecha_publicacion_portafolio = req.body.fecha_publicacion_portafolio;
         const id_empresa = req.body.id_empresa;

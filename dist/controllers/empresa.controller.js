@@ -13,7 +13,7 @@ var _message = _interopRequireDefault(require("../config/message"));
 // INGRESAR DATOS
 var createEmpresa = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
-    var id_empresa, nombre_empresa, direccion, ciudad, pais, telefono, correo_electronico, fecha_registro, contrasena, result;
+    var id_empresa, nombre_empresa, direccion, ciudad, pais, telefono, correo_electronico, contrasena, result;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -25,10 +25,9 @@ var createEmpresa = /*#__PURE__*/function () {
           pais = req.body.pais;
           telefono = req.body.telefono;
           correo_electronico = req.body.correo_electronico;
-          fecha_registro = req.body.fecha_registro;
           contrasena = req.body.contrasena;
           _context.next = 12;
-          return _db.pool.query("CALL spInsertEmpresa('".concat(id_empresa, "','").concat(nombre_empresa, "', '").concat(direccion, "', '").concat(ciudad, "', '").concat(pais, "', '").concat(telefono, "', '").concat(correo_electronico, "', '").concat(fecha_registro, "', '").concat(contrasena, "');"));
+          return _db.pool.query("CALL spInsertEmpresa('".concat(id_empresa, "','").concat(nombre_empresa, "', '").concat(direccion, "', '").concat(ciudad, "', '").concat(pais, "', '").concat(telefono, "', '").concat(correo_electronico, "', '").concat(contrasena, "');"));
         case 12:
           result = _context.sent;
           res.json(result);
@@ -155,7 +154,7 @@ var pingEmpresa = /*#__PURE__*/function () {
 exports.pingEmpresa = pingEmpresa;
 var UpdateEmpresa = /*#__PURE__*/function () {
   var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(req, res) {
-    var id_empresa, nombre_empresa, direccion, ciudad, pais, telefono, correo_electronico, fecha_registro, contrasena, result;
+    var id_empresa, nombre_empresa, direccion, ciudad, pais, telefono, correo_electronico, contrasena, result;
     return _regenerator["default"].wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
@@ -167,10 +166,9 @@ var UpdateEmpresa = /*#__PURE__*/function () {
           pais = req.body.pais;
           telefono = req.body.telefono;
           correo_electronico = req.body.correo_electronico;
-          fecha_registro = req.body.fecha_registro;
           contrasena = req.body.contrasena;
           _context5.next = 12;
-          return _db.pool.query("CALL spUpdateEmpresa (".concat(id_empresa, ", '").concat(nombre_empresa, "', '").concat(direccion, "', '").concat(ciudad, "', '").concat(pais, "', '").concat(telefono, "', '").concat(correo_electronico, "', '").concat(fecha_registro, "', '").concat(contrasena, "');"));
+          return _db.pool.query("CALL spUpdateEmpresa (".concat(id_empresa, ", '").concat(nombre_empresa, "', '").concat(direccion, "', '").concat(ciudad, "', '").concat(pais, "', '").concat(telefono, "', '").concat(correo_electronico, "', '").concat(contrasena, "');"));
         case 12:
           result = _context5.sent;
           res.send(result);

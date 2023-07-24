@@ -13,7 +13,7 @@ var _message = _interopRequireDefault(require("../config/message"));
 // INGRESAR DATOS
 var createPortafolio = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
-    var id_proyecto, nombre_proyecto, descripcion, email, imagen_url, categoria_proyecto, fecha_registro, fecha_creacion_proyecto, fecha_publicacion_portafolio, id_empresa, id_usuario, result;
+    var id_proyecto, nombre_proyecto, descripcion, email, imagen_url, categoria_proyecto, fecha_creacion_proyecto, fecha_publicacion_portafolio, id_empresa, id_usuario, result;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -24,7 +24,6 @@ var createPortafolio = /*#__PURE__*/function () {
           email = req.body.email;
           imagen_url = req.body.imagen_url;
           categoria_proyecto = req.body.categoria_proyecto;
-          fecha_registro = req.body.fecha_registro;
           fecha_creacion_proyecto = req.body.fecha_creacion_proyecto;
           fecha_publicacion_portafolio = req.body.fecha_publicacion_portafolio;
           id_empresa = req.body.id_empresa;

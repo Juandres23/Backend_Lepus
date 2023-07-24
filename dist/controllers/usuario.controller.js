@@ -13,7 +13,7 @@ var _message = _interopRequireDefault(require("../config/message"));
 // INGRESAR DATOS
 var createUsuario = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
-    var id_usuario, nombre, apellido, email, telefono, direccion, fecha_registro, id_rol, fecha_nacimiento, contrasena, genero, result;
+    var id_usuario, nombre, apellido, email, telefono, direccion, id_rol, fecha_nacimiento, contrasena, genero, result;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -24,13 +24,12 @@ var createUsuario = /*#__PURE__*/function () {
           email = req.body.email;
           telefono = req.body.telefono;
           direccion = req.body.direccion;
-          fecha_registro = req.body.fecha_registro;
           id_rol = req.body.id_rol;
           fecha_nacimiento = req.body.fecha_nacimiento;
           contrasena = req.body.contrasena;
           genero = req.body.genero;
           _context.next = 14;
-          return _db.pool.query("CALL spInsertUsuario('".concat(id_usuario, "','").concat(nombre, "', '").concat(apellido, "', '").concat(email, "', '").concat(telefono, "', '").concat(direccion, "', '").concat(fecha_registro, "', ").concat(id_rol, ", '").concat(fecha_nacimiento, "', '").concat(contrasena, "', '").concat(genero, "');"));
+          return _db.pool.query("CALL spInsertUsuario('".concat(id_usuario, "','").concat(nombre, "', '").concat(apellido, "', '").concat(email, "', '").concat(telefono, "', '").concat(direccion, "', '").concat(id_rol, ", '").concat(fecha_nacimiento, "', '").concat(contrasena, "', '").concat(genero, "');"));
         case 14:
           result = _context.sent;
           res.json(result);
@@ -157,7 +156,7 @@ var pingUsuario = /*#__PURE__*/function () {
 exports.pingUsuario = pingUsuario;
 var UpdateUsuario = /*#__PURE__*/function () {
   var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(req, res) {
-    var id_usuario, nombre, apellido, email, telefono, direccion, fecha_registro, id_rol, fecha_nacimiento, contrasena, genero, result;
+    var id_usuario, nombre, apellido, email, telefono, direccion, id_rol, fecha_nacimiento, contrasena, genero, result;
     return _regenerator["default"].wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
@@ -168,13 +167,12 @@ var UpdateUsuario = /*#__PURE__*/function () {
           email = req.body.email;
           telefono = req.body.telefono;
           direccion = req.body.direccion;
-          fecha_registro = req.body.fecha_registro;
           id_rol = req.body.id_rol;
           fecha_nacimiento = req.body.fecha_nacimiento;
           contrasena = req.body.contrasena;
           genero = req.body.genero;
           _context5.next = 14;
-          return _db.pool.query("CALL spUpdateUsuario('".concat(id_usuario, "','").concat(nombre, "', '").concat(apellido, "', '").concat(email, "', '").concat(telefono, "', '").concat(direccion, "', '").concat(fecha_registro, "', '").concat(id_rol, "', '").concat(fecha_nacimiento, "', '").concat(contrasena, "', '").concat(genero, "');"));
+          return _db.pool.query("CALL spUpdateUsuario('".concat(id_usuario, "','").concat(nombre, "', '").concat(apellido, "', '").concat(email, "', '").concat(telefono, "', '").concat(direccion, "', '").concat(id_rol, "', '").concat(fecha_nacimiento, "', '").concat(contrasena, "', '").concat(genero, "');"));
         case 14:
           result = _context5.sent;
           res.send(result);

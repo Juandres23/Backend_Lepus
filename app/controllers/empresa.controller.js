@@ -12,9 +12,8 @@ export const createEmpresa = async (req, res) => {
         const pais = req.body.pais;
         const telefono = req.body.telefono;
         const correo_electronico = req.body.correo_electronico;
-        const fecha_registro = req.body.fecha_registro;
         const contrasena = req.body.contrasena;
-        const result = await pool.query(`CALL spInsertEmpresa('${id_empresa}','${nombre_empresa}', '${direccion}', '${ciudad}', '${pais}', '${telefono}', '${correo_electronico}', '${fecha_registro}', '${contrasena}');`);
+        const result = await pool.query(`CALL spInsertEmpresa('${id_empresa}','${nombre_empresa}', '${direccion}', '${ciudad}', '${pais}', '${telefono}', '${correo_electronico}', '${contrasena}');`);
         res.json(result);
     } catch (error) {
         message(error.message, "danger");
@@ -66,9 +65,8 @@ export const UpdateEmpresa = async (req, res) => {
         const pais = req.body.pais;
         const telefono = req.body.telefono;
         const correo_electronico = req.body.correo_electronico;
-        const fecha_registro = req.body.fecha_registro;
         const contrasena = req.body.contrasena;
-        const result = await pool.query(`CALL spUpdateEmpresa (${id_empresa}, '${nombre_empresa}', '${direccion}', '${ciudad}', '${pais}', '${telefono}', '${correo_electronico}', '${fecha_registro}', '${contrasena}');`);
+        const result = await pool.query(`CALL spUpdateEmpresa (${id_empresa}, '${nombre_empresa}', '${direccion}', '${ciudad}', '${pais}', '${telefono}', '${correo_electronico}', '${contrasena}');`);
         res.send(result);
     } catch (error) {
         message(error.message, "danger");

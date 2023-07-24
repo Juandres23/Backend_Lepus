@@ -5,7 +5,7 @@ const router = Router();
 
 router.post('/', usuarioController.createUsuario);
 
-router.get('/', usuarioController.findAllUsuario);
+router.get('/AllUsuario', usuarioController.findAllUsuario);
 
 router.get('/ping', usuarioController.pingUsuario);
 

@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 });
 
 //settings
-app.set("PORT", process.env.PORT || 3000);
+app.set("PORT", process.env.PORT || 4000);
 
 //middlewares
 app.use((0, _morgan["default"])('dev'));

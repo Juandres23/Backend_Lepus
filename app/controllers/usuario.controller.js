@@ -11,12 +11,11 @@ export const createUsuario = async (req, res) => {
         const email = req.body.email;
         const telefono = req.body.telefono;
         const direccion = req.body.direccion;
-        const fecha_registro = req.body.fecha_registro;
         const id_rol = req.body.id_rol;
         const fecha_nacimiento = req.body.fecha_nacimiento;
         const contrasena = req.body.contrasena;
         const genero = req.body.genero;
-        const result = await pool.query(`CALL spInsertUsuario('${id_usuario}','${nombre}', '${apellido}', '${email}', '${telefono}', '${direccion}', '${fecha_registro}', ${id_rol}, '${fecha_nacimiento}', '${contrasena}', '${genero}');`);
+        const result = await pool.query(`CALL spInsertUsuario('${id_usuario}','${nombre}', '${apellido}', '${email}', '${telefono}', '${direccion}', ${id_rol}, '${fecha_nacimiento}', '${contrasena}', '${genero}');`);
         res.json(result);
     } catch (error) {
         message(error.message, "danger");
@@ -66,12 +65,11 @@ export const UpdateUsuario = async (req, res) => {
         const email = req.body.email;
         const telefono = req.body.telefono;
         const direccion = req.body.direccion;
-        const fecha_registro = req.body.fecha_registro;
         const id_rol = req.body.id_rol;
         const fecha_nacimiento = req.body.fecha_nacimiento;
         const contrasena = req.body.contrasena;
         const genero = req.body.genero;
-        const result = await pool.query(`CALL spUpdateUsuario('${id_usuario}','${nombre}', '${apellido}', '${email}', '${telefono}', '${direccion}', '${fecha_registro}', '${id_rol}', '${fecha_nacimiento}', '${contrasena}', '${genero}');`);
+        const result = await pool.query(`CALL spUpdateUsuario('${id_usuario}','${nombre}', '${apellido}', '${email}', '${telefono}', '${direccion}', '${id_rol}', '${fecha_nacimiento}', '${contrasena}', '${genero}');`);
         res.send(result);
     } catch (error) {
         message(error.message, "danger");
