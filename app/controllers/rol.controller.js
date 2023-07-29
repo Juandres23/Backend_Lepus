@@ -7,8 +7,7 @@ export const createRol = async (req, res) => {
     try {
         const id_rol = req.params.id_rol;
         const nombre = req.body.nombre; 
-        const estado = req.body.estado;
-        const result = await pool.query(`CALL spInsertRol('${id_rol}', '${nombre}', '${estado}');`);
+        const result = await pool.query(`CALL spInsertRol('${id_rol}', '${nombre}');`);
         res.json(result);
     } catch (error) {
         message(error.message, "danger");
@@ -56,8 +55,7 @@ export const UpdateRol = async (req, res) => {
     try {
         const id_rol = req.params.id_rol;
         const nombre = req.body.nombre; 
-        const estado = req.body.estado;
-        const result = await pool.query(`CALL spUpdateRol (${id_rol}, '${nombre}', '${estado}');`);
+        const result = await pool.query(`CALL spUpdateRol (${id_rol}, '${nombre}');`);
         res.send(result);
     } catch (error) {
         message(error.message, "danger");

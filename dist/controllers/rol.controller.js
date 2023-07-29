@@ -13,16 +13,15 @@ var _message = _interopRequireDefault(require("../config/message"));
 // INGRESAR DATOS
 var createRol = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
-    var id_rol, nombre, estado, result;
+    var id_rol, nombre, result;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           _context.prev = 0;
           id_rol = req.params.id_rol;
           nombre = req.body.nombre;
-          estado = req.body.estado;
           _context.next = 6;
-          return _db.pool.query("CALL spInsertRol('".concat(id_rol, "', '").concat(nombre, "', '").concat(estado, "');"));
+          return _db.pool.query("CALL spInsertRol('".concat(id_rol, "', '").concat(nombre, "');"));
         case 6:
           result = _context.sent;
           res.json(result);
@@ -149,16 +148,15 @@ var pingRol = /*#__PURE__*/function () {
 exports.pingRol = pingRol;
 var UpdateRol = /*#__PURE__*/function () {
   var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(req, res) {
-    var id_rol, nombre, estado, result;
+    var id_rol, nombre, result;
     return _regenerator["default"].wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
           _context5.prev = 0;
           id_rol = req.params.id_rol;
           nombre = req.body.nombre;
-          estado = req.body.estado;
           _context5.next = 6;
-          return _db.pool.query("CALL spUpdateRol (".concat(id_rol, ", '").concat(nombre, "', '").concat(estado, "');"));
+          return _db.pool.query("CALL spUpdateRol (".concat(id_rol, ", '").concat(nombre,  "');"));
         case 6:
           result = _context5.sent;
           res.send(result);

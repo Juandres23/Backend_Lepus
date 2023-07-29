@@ -88,3 +88,27 @@ export const deleteUsuario = async (req, res) => {
         res.status(500);
     }
 };
+
+// INICIO DE SESIÓN
+export const loginUsuario = async (req, res) => {
+    try {
+        const email = req.body.email;
+        const contrasena = req.body.contrasena;
+        const id_rol = req.body.id_rol;
+
+        // Realizar una consulta a la base de datos para verificar las credenciales del usuario
+        const [result] = await pool.query(`CALL spLoginUsuario('${email}', '${contrasena}', ${id_rol};`);
+
+        // Verificar si se encontró un usuario con las credenciales proporcionadas
+        if (result && result.length > 0) {
+            // Iniciar sesión o generar un token de autenticación
+            // Por ejemplo, podrías almacenar el usuario en la sesión req.session.user = { email, id_rol };
+            res.json({ success: true, message: "Inicio de sesión exitoso", user: { email, id_rol } });
+        } else {
+            res.status(401).json({ success: false, message: "Credenciales inválidas" });
+        }
+    } catch (error) {
+        message(error.message, "danger");
+        res.status(500);
+    }
+};

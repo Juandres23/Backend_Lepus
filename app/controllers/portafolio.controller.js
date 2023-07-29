@@ -8,14 +8,9 @@ export const createPortafolio = async (req, res) => {
         const id_proyecto = req.params.id_proyecto;
         const nombre_proyecto = req.body.nombre_proyecto; 
         const descripcion = req.body.descripcion;
-        const email = req.body.email;
         const imagen_url = req.body.imagen_url;
         const categoria_proyecto = req.body.categoria_proyecto;
-        const fecha_creacion_proyecto = req.body.fecha_creacion_proyecto;
-        const fecha_publicacion_portafolio = req.body.fecha_publicacion_portafolio;
-        const id_empresa = req.body.id_empresa;
-        const id_usuario = req.body.id_usuario;
-        const result = await pool.query(`CALL spInsertPortafolio ('${id_proyecto}', '${nombre_proyecto}', '${descripcion}', '${imagen_url}', '${categoria_proyecto}', '${fecha_creacion_proyecto}', '${fecha_publicacion_portafolio}', ${id_empresa}, ${id_usuario}');`);
+        const result = await pool.query(`CALL spInsertPortafolio ('${id_proyecto}', '${nombre_proyecto}', '${descripcion}', '${imagen_url}', '${categoria_proyecto}');`);
         res.json(result);
     } catch (error) {
         message(error.message, "danger");
@@ -63,14 +58,9 @@ export const UpdatePortafolio = async (req, res) => {
         const id_proyecto = req.params.id_proyecto;
         const nombre_proyecto = req.body.nombre_proyecto; 
         const descripcion = req.body.descripcion;
-        const email = req.body.email;
         const imagen_url = req.body.imagen_url;
         const categoria_proyecto = req.body.categoria_proyecto;
-        const fecha_creacion_proyecto = req.body.fecha_creacion_proyecto;
-        const fecha_publicacion_portafolio = req.body.fecha_publicacion_portafolio;
-        const id_empresa = req.body.id_empresa;
-        const id_usuario = req.body.id_usuario;
-        const result = await pool.query(`CALL spUpdatePortafolio ('${id_proyecto}', '${nombre_proyecto}', '${descripcion}', '${imagen_url}', '${categoria_proyecto}', '${fecha_creacion_proyecto}', '${fecha_publicacion_portafolio}', ${id_empresa}, ${id_usuario}');`);
+        const result = await pool.query(`CALL spUpdatePortafolio ('${id_proyecto}', '${nombre_proyecto}', '${descripcion}', '${imagen_url}', '${categoria_proyecto}');`);
         res.send(result);
     } catch (error) {
         message(error.message, "danger");

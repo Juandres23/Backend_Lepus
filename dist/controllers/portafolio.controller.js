@@ -13,7 +13,7 @@ var _message = _interopRequireDefault(require("../config/message"));
 // INGRESAR DATOS
 var createPortafolio = /*#__PURE__*/function () {
   var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(req, res) {
-    var id_proyecto, nombre_proyecto, descripcion, email, imagen_url, categoria_proyecto, fecha_creacion_proyecto, fecha_publicacion_portafolio, id_empresa, id_usuario, result;
+    var id_proyecto, nombre_proyecto, descripcion, email, imagen_url, categoria_proyecto, result;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -24,12 +24,8 @@ var createPortafolio = /*#__PURE__*/function () {
           email = req.body.email;
           imagen_url = req.body.imagen_url;
           categoria_proyecto = req.body.categoria_proyecto;
-          fecha_creacion_proyecto = req.body.fecha_creacion_proyecto;
-          fecha_publicacion_portafolio = req.body.fecha_publicacion_portafolio;
-          id_empresa = req.body.id_empresa;
-          id_usuario = req.body.id_usuario;
           _context.next = 14;
-          return _db.pool.query("CALL spInsertPortafolio ('".concat(id_proyecto, "', '").concat(nombre_proyecto, "', '").concat(descripcion, "', '").concat(imagen_url, "', '").concat(categoria_proyecto, "', '").concat(fecha_creacion_proyecto, "', '").concat(fecha_publicacion_portafolio, "', ").concat(id_empresa, ", ").concat(id_usuario, "');"));
+          return _db.pool.query("CALL spInsertPortafolio ('".concat(id_proyecto, "', '").concat(nombre_proyecto, "', '").concat(descripcion, "', '").concat(imagen_url, "', '").concat(categoria_proyecto, "');"));
         case 14:
           result = _context.sent;
           res.json(result);
@@ -156,7 +152,7 @@ var pingPortafolio = /*#__PURE__*/function () {
 exports.pingPortafolio = pingPortafolio;
 var UpdatePortafolio = /*#__PURE__*/function () {
   var _ref5 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee5(req, res) {
-    var id_proyecto, nombre_proyecto, descripcion, email, imagen_url, categoria_proyecto, fecha_creacion_proyecto, fecha_publicacion_portafolio, id_empresa, id_usuario, result;
+    var id_proyecto, nombre_proyecto, descripcion, imagen_url, categoria_proyecto, result;
     return _regenerator["default"].wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
@@ -164,15 +160,10 @@ var UpdatePortafolio = /*#__PURE__*/function () {
           id_proyecto = req.params.id_proyecto;
           nombre_proyecto = req.body.nombre_proyecto;
           descripcion = req.body.descripcion;
-          email = req.body.email;
           imagen_url = req.body.imagen_url;
           categoria_proyecto = req.body.categoria_proyecto;
-          fecha_creacion_proyecto = req.body.fecha_creacion_proyecto;
-          fecha_publicacion_portafolio = req.body.fecha_publicacion_portafolio;
-          id_empresa = req.body.id_empresa;
-          id_usuario = req.body.id_usuario;
           _context5.next = 13;
-          return _db.pool.query("CALL spUpdatePortafolio ('".concat(id_proyecto, "', '").concat(nombre_proyecto, "', '").concat(descripcion, "', '").concat(imagen_url, "', '").concat(categoria_proyecto, "', '").concat(fecha_creacion_proyecto, "', '").concat(fecha_publicacion_portafolio, "', ").concat(id_empresa, ", ").concat(id_usuario, "');"));
+          return _db.pool.query("CALL spUpdatePortafolio ('".concat(id_proyecto, "', '").concat(nombre_proyecto, "', '").concat(descripcion, "', '").concat(imagen_url, "', '").concat(categoria_proyecto, "');"));
         case 13:
           result = _context5.sent;
           res.send(result);

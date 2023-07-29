@@ -2,10 +2,15 @@ import { Router } from "express";
 import * as usuarioController from "../controllers/usuario.controller";
 const router = Router();
 
+// ruta Inicio de sesión
+router.post('/login', usuarioController.loginUsuario);
 
+
+
+// CRUD
 router.post('/', usuarioController.createUsuario);
 
-router.get('/AllUsuario', usuarioController.findAllUsuario);
+router.get('/', usuarioController.findAllUsuario);
 
 router.get('/ping', usuarioController.pingUsuario);
 
