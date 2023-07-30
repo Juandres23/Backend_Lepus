@@ -5,7 +5,7 @@ import message from "../config/message";
 // INGRESAR DATOS
 export const createUsuario = async (req, res) => {
     try {
-        const id_usuario = req.params.id_usuario;
+        const id_usuario = req.body.id_usuario;
         const nombre = req.body.nombre; 
         const apellido = req.body.apellido;
         const email = req.body.email;
@@ -18,8 +18,8 @@ export const createUsuario = async (req, res) => {
         const result = await pool.query(`CALL spInsertUsuario('${id_usuario}','${nombre}', '${apellido}', '${email}', '${telefono}', '${direccion}', ${id_rol}, '${fecha_nacimiento}', '${contrasena}', '${genero}');`);
         res.json(result);
     } catch (error) {
-        message(error.message, "danger");
-        res.status(500);
+        console.error(error.message);
+        res.status(500).send({ error: error.message });
     }
 };
 
